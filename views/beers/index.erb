@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Beers</title>
+    <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+    <h2>BEERS</h2>
+    <ul>
+      <table>
+         <tr>
+           <th>BEER LIST</th>
+           <th>RATING</th>
+         </tr>
+         <% beers.each do |row| %>
+         <tr>
+           <td><a href="/beers/<%=row['id']%>"><%=row['name']%></a></td>
+           <td><%= row['rating'] %> </td>
+         </tr>
+        <% end %>
+      </table>
+    </ul>
+    <form action="/beers" method="post">
+
+    Add Beer Here<input type="text" name="name"  required/>
+    Rating <select name="rating" required>
+              <option value=1>1</option>
+              <option value=2>2</option>
+              <option value=3>3</option>
+              <option value=4>4</option>
+              <option value=5>5</option>
+              <option value=6>6</option>
+              <option value=7>7</option>
+              <option value=8>8</option>
+              <option value=9>9</option>
+              <option value=10>10</option>
+    </select>
+
+      <input value="Add more beer!" type="submit"/>
+
+
+    </form>
+  </body>
+</html>
